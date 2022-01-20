@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Frontend Mentor | Time tracking dashboard</title>
+  </head>
+  <body>
+    <main class="main">
+      <div class="user__card">
+        <div class="user__info">
+          <img src="./images/image-jeremy.png" alt="" class="user__img" />
+          <div class="user__text">
+            <h1>Report for <span class="user__name">Jeremy Robson</span></h1>
+          </div>
+        </div>
+        <div class="report__btns">
+          <button class="btn active">Daily</button>
+          <button class="btn">Weekly</button>
+          <button class="btn">Monthly</button>
+        </div>
+      </div>
+
+      <div class="card work">
+        <div class="card__img">
+          <img src="./images/icon-work.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__header">
+            <h2 class="card__heading">Work</h2>
+            <div class="dots"></div>
+          </div>
+          <div class="card__stats">
+            <p class="hours">5hrs</p>
+            <div class="hours__previous">Yesterday - 7hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card play">
+        <div class="card__img">
+          <img src="./images/icon-play.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__header">
+            <h2 class="card__heading">Play</h2>
+            <div class="dots"></div>
+          </div>
+          <div class="card__stats">
+            <div class="hours">1hr</div>
+            <div class="hours__previous">Yesterday - 2hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card study">
+        <div class="card__img">
+          <img src="./images/icon-study.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__header">
+            <h2 class="card__heading">Study</h2>
+            <div class="dots"></div>
+          </div>
+          <div class="card__stats">
+            <div class="hours">0hrs</div>
+            <div class="hours__previous">Yesterday - 1hr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card exercise">
+        <div class="card__img">
+          <img src="./images/icon-exercise.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__header">
+            <h2 class="card__heading">Exercise</h2>
+            <div class="dots"></div>
+          </div>
+          <div class="card__stats">
+            <div class="hours">1hr</div>
+            <div class="hours__previous">Yesterday - 1hr</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card social">
+        <div class="card__img">
+          <img src="./images/icon-social.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__header">
+            <h2 class="card__heading">Social</h2>
+            <div class="dots"></div>
+          </div>
+          <div class="card__stats">
+            <div class="hours">1hr</div>
+            <div class="hours__previous">Yesterday - 3hrs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="card care">
+        <div class="card__img">
+          <img src="./images/icon-self-care.svg" alt="" />
+        </div>
+        <div class="card__content">
+          <div class="card__header">
+            <h2 class="card__heading">Self Care</h2>
+            <div class="dots"></div>
+          </div>
+          <div class="card__stats">
+            <div class="hours">0hr</div>
+            <div class="hours__previous">Yesterday - 1hr</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          rel="noreferrer"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://twitter.com/bailey_coding">Chris Bailey</a>.
+      </div>
+    </footer>
+    <script src="./script.js"></script>
+  </body>
+</html>
