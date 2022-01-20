@@ -9,53 +9,62 @@ const getData = async function (reportType) {
   hoursEl.forEach((el, idx) => {
     if (reportType === "weekly") {
       info[idx].timeframes.weekly.current === 1
-        ? (el.textContent = `${info[idx].timeframes.weekly.current} hr`)
-        : (el.textContent = `${info[idx].timeframes.weekly.current} hrs`);
+        ? (el.innerHTML = `${info[idx].timeframes.weekly.current} hr`)
+        : (el.innerHTML = `${info[idx].timeframes.weekly.current} hrs`);
     } else if (reportType === "daily") {
       info[idx].timeframes.daily.current === 1
-        ? (el.textContent = `${info[idx].timeframes.daily.current} hr`)
-        : (el.textContent = `${info[idx].timeframes.daily.current} hrs`);
+        ? (el.innerHTML = `${info[idx].timeframes.daily.current} hr`)
+        : (el.innerHTML = `${info[idx].timeframes.daily.current} hrs`);
     } else if (reportType === "monthly") {
       info[idx].timeframes.monthly.current === 1
-        ? (el.textContent = `${info[idx].timeframes.monthly.current} hr`)
-        : (el.textContent = `${info[idx].timeframes.monthly.current} hrs`);
+        ? (el.innerHTML = `${info[idx].timeframes.monthly.current} hr`)
+        : (el.innerHTML = `${info[idx].timeframes.monthly.current} hrs`);
     }
   });
   prevHoursEl.forEach((el, idx) => {
     reportType === "weekly"
       ? info[idx].timeframes.weekly.previous === 1
-        ? (el.textContent = `Last week - ${info[idx].timeframes.weekly.previous} hr`)
-        : (el.textContent = `Last week - ${info[idx].timeframes.weekly.previous} hrs`)
+        ? (el.innerHTML = `Last week - ${info[idx].timeframes.weekly.previous} hr`)
+        : (el.innerHTML = `Last week - ${info[idx].timeframes.weekly.previous} hrs`)
       : reportType === "daily"
       ? info[idx].timeframes.daily.previous === 1
-        ? (el.textContent = `Yesterday - ${info[idx].timeframes.daily.previous} hr`)
-        : (el.textContent = `Yesterday - ${info[idx].timeframes.daily.previous} hrs`)
+        ? (el.innerHTML = `Yesterday - ${info[idx].timeframes.daily.previous} hr`)
+        : (el.innerHTML = `Yesterday - ${info[idx].timeframes.daily.previous} hrs`)
       : info[idx].timeframes.monthly.previous === 1
-      ? (el.textContent = `Last month - ${info[idx].timeframes.monthly.previous} hr`)
-      : (el.textContent = `Last month - ${info[idx].timeframes.monthly.previous} hrs`);
+      ? (el.innerHTML = `Last month - ${info[idx].timeframes.monthly.previous} hr`)
+      : (el.innerHTML = `Last month - ${info[idx].timeframes.monthly.previous} hrs`);
 
     // if (reportType === "weekly") {
     //   info[idx].timeframes.weekly.previous === 1
-    //     ? (el.textContent = `Last week - ${info[idx].timeframes.weekly.previous} hr`)
-    //     : (el.textContent = `Last week - ${info[idx].timeframes.weekly.previous} hrs`);
+    //     ? (el.innerHTML = `Last week - ${info[idx].timeframes.weekly.previous} hr`)
+    //     : (el.innerHTML = `Last week - ${info[idx].timeframes.weekly.previous} hrs`);
     // } else if (reportType === "daily") {
     //   info[idx].timeframes.daily.previous === 1
-    //     ? (el.textContent = `Yesterday - ${info[idx].timeframes.daily.previous} hr`)
-    //     : (el.textContent = `Yesterday - ${info[idx].timeframes.daily.previous} hrs`);
+    //     ? (el.innerHTML = `Yesterday - ${info[idx].timeframes.daily.previous} hr`)
+    //     : (el.innerHTML = `Yesterday - ${info[idx].timeframes.daily.previous} hrs`);
     // } else if (reportType === "monthly") {
     //   info[idx].timeframes.monthly.previous === 1
-    //     ? (el.textContent = `Last month - ${info[idx].timeframes.monthly.previous} hr`)
-    //     : (el.textContent = `Last month - ${info[idx].timeframes.monthly.previous} hrs`);
+    //     ? (el.innerHTML = `Last month - ${info[idx].timeframes.monthly.previous} hr`)
+    //     : (el.innerHTML = `Last month - ${info[idx].timeframes.monthly.previous} hrs`);
     // }
   });
 };
 const removeClass = () =>
   buttons.forEach((btn) => btn.classList.remove("active"));
-
+const lottieAnim = () => {
+  hoursEl.forEach(
+    (el) =>
+      (el.innerHTML = `<lottie-player src="https://assets2.lottiefiles.com/packages/lf20_jlrxxylp.json"  background="transparent"  speed="1.1"  style="width: 100px; height: 50px;"  loop autoplay></lottie-player>`)
+  );
+  prevHoursEl.forEach((el) => (el.innerHTML = ""));
+};
 buttons.forEach((btn) => {
   btn.addEventListener("click", (e) => {
     removeClass();
     e.target.classList.add("active");
-    getData(e.target.textContent.toLowerCase());
+    lottieAnim();
+    setTimeout(() => {
+      getData(e.target.innerHTML.toLowerCase());
+    }, 3500);
   });
 });

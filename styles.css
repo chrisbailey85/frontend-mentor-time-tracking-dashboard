@@ -9,7 +9,7 @@
 body {
   position: relative;
   font-family: "Rubik", sans-serif;
-  padding: 5rem 2rem;
+  padding: 5rem 1rem;
   background-color: hsl(226, 43%, 10%);
   min-height: 100vh;
 }
@@ -113,12 +113,13 @@ h1 {
   align-items: center;
 }
 .hours {
-  font-size: 2rem;
+  font-size: 1.5rem;
   font-weight: 300;
 }
 .hours__previous {
   color: hsl(236, 100%, 87%);
   font-weight: 400;
+  font-size: 1rem;
 }
 .work {
   background-color: hsl(15, 100%, 70%);
@@ -157,10 +158,19 @@ footer {
   :root {
     --padding: 2rem;
   }
+  body {
+    padding: 5rem 1.2rem;
+  }
+  .hours {
+    font-size: 1.8rem;
+  }
 }
 @media (min-width: 425px) {
   body {
-    padding: 5rem 3rem;
+    padding: 5rem 2.5rem;
+  }
+  .hours {
+    font-size: 2rem;
   }
 }
 @media (min-width: 768px) {
@@ -173,7 +183,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0rem 5rem;
+    padding: 0rem 1rem;
   }
   main {
     display: grid;
